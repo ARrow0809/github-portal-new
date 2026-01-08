@@ -78,7 +78,7 @@ function App() {
 
   const getDeployUrl = (repo) => {
     if (repo.homepage) return repo.homepage;
-    if (repo.name === 'my-Portfolio') return 'https://arrow0809.github.io/my-Portfolio/';
+    if (repo.name === 'my-Portfolio') return 'https://service-886406686150.us-west1.run.app/';
     if (repo.has_pages) return `https://${GITHUB_USERNAME.toLowerCase()}.github.io/${repo.name}/`;
     return '';
   };

@@ -2,6 +2,6 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
 export default defineConfig({
-  base: '/github-portal-new/',
+  base: process.env.GITHUB_ACTIONS && !process.env.VERCEL ? '/github-portal-new/' : '/',
   plugins: [react()],
 });

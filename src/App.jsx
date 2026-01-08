@@ -145,8 +145,15 @@ function App() {
 
                       <div className="card-actions">
                         <a href={repo.html_url} target="_blank" rel="noopener noreferrer" className="btn-action primary">GitHubへ</a>
-                        {repo.homepage && (
-                          <a href={repo.homepage} target="_blank" rel="noopener noreferrer" className="btn-action secondary">公開サイト</a>
+                        {(repo.homepage || repo.has_pages) && (
+                          <a 
+                            href={repo.homepage || `https://${GITHUB_USERNAME.toLowerCase()}.github.io/${repo.name}/`} 
+                            target="_blank" 
+                            rel="noopener noreferrer" 
+                            className="btn-action secondary"
+                          >
+                            公開サイト
+                          </a>
                         )}
                       </div>
                     </div>
@@ -159,7 +166,7 @@ function App() {
       </main>
 
       <footer>
-        <p>© 2026 Kishibe Rohan AI Design Studio. | 60秒ごとに自動更新</p>
+        <p>© 2026 あろうのギャラリー | 60秒ごとに自動更新</p>
       </footer>
     </div>
   );

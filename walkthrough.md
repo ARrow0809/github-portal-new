@@ -29,3 +29,12 @@ npm run dev
 ## 次にやること（任意）
 - `npm run dev` を実行し、UI表示とGitHub API取得の動作確認
 - リポジトリ言語ごとのアイコン/バッジの精度調整
+
+## GitHub リポジトリ
+- https://github.com/ARrow0809/github-portal-new
+
+## GitHub Pages
+- https://arrow0809.github.io/github-portal-new/
+
+## 自動デプロイ（GitHub Actions）
+- mainにpushするとGitHub Pagesが自動更新されます（`.github/workflows/deploy.yml` 追加）

@@ -76,6 +76,13 @@ function App() {
     return Array.from(groups.entries());
   }, [filteredAndSortedRepos]);
 
+  const getDeployUrl = (repo) => {
+    if (repo.homepage) return repo.homepage;
+    if (repo.name === 'my-Portfolio') return 'https://arrow0809.github.io/my-Portfolio/';
+    if (repo.has_pages) return `https://${GITHUB_USERNAME.toLowerCase()}.github.io/${repo.name}/`;
+    return '';
+  };
+
   return (
     <div className="container">
       <header>
@@ -145,9 +152,9 @@ function App() {
 
                       <div className="card-actions">
                         <a href={repo.html_url} target="_blank" rel="noopener noreferrer" className="btn-action primary">GitHubへ</a>
-                        {(repo.homepage || repo.has_pages) && (
+                        {getDeployUrl(repo) && (
                           <a 
-                            href={repo.homepage || `https://${GITHUB_USERNAME.toLowerCase()}.github.io/${repo.name}/`} 
+                            href={getDeployUrl(repo)} 
                             target="_blank" 
                             rel="noopener noreferrer" 
                             className="btn-action secondary"
